@@ -1,0 +1,125 @@
+/*
+ |----------------------------------------------------------------
+ |  Headings
+ |----------------------------------------------------------------
+ */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin: 0;
+    padding-bottom: 20px;
+    font-weight: $normal;
+    color: inherit;
+    //@include bebas;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    p + &,
+    ul:not([class]) + &,
+    ol:not([class]) + & {
+        // padding-top: 10px;
+    }
+}
+
+h1 {
+    @include font-size(50, 32);
+}
+
+h2 {
+    @include font-size(32, 24);
+}
+
+h3 {
+    @include font-size(24, 20);
+}
+
+h4 {
+    @include font-size(20, 18);
+}
+
+h5 {
+    @include font-size(18, 16);
+}
+
+h6 {
+    @include font-size(14);
+}
+
+/*
+ |----------------------------------------------------------------
+ |  Paragraph
+ |----------------------------------------------------------------
+ */
+p {
+    margin: 0;
+    padding-bottom: 25px;
+    @include font-size(17, 16);
+    line-height: 1.8;
+    color: inherit;
+
+    &:empty {
+        display: none;
+    }
+}
+
+.intro {
+    @include font-size(22, 20);
+}
+
+/*
+ |----------------------------------------------------------------
+ |  Horizontal Line
+ |----------------------------------------------------------------
+ */
+hr {
+    border: none;
+    border-bottom: 1px solid $highlight;
+    width: 90%;
+    margin: 10px auto 35px;
+}
+
+/*
+ |----------------------------------------------------------------
+ |  MISC
+ |----------------------------------------------------------------
+ */
+i, em {
+    font-style: italic;
+}
+
+b, strong {
+    font-weight: $bold;
+}
+
+/*
+ |----------------------------------------------------------------
+ | Address
+ |----------------------------------------------------------------
+ */
+address {
+    font-style: normal;
+}
+
+/*
+ |----------------------------------------------------------------
+ | Code
+ |----------------------------------------------------------------
+ */
+code, pre {
+    background-color: $light-grey;
+    font-family: "Consolas", monospace;
+    @include font-size(14);
+}
+
+pre {
+    padding: 25px 20px;
+}
+
+code {
+    border-radius: 3px;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding: 2px 5px;
+}

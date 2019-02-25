@@ -1,0 +1,73 @@
+/*
+ |----------------------------------------------------------------
+ |  Font Faces
+ |----------------------------------------------------------------
+ */
+//@mixin source() {
+//    font-family: 'Source Serif Pro', serif;
+//}
+//
+//@mixin roboto() {
+//    font-family: 'Roboto Condensed', sans-serif;
+//}
+//
+//@mixin bebas() {
+//    font-family: "bebas-neue",sans-serif;
+//}
+//
+//@mixin main-font() {
+//    @include source;
+//}
+
+/*
+ |----------------------------------------------------------------
+ |  Button Base/Mixin
+ |----------------------------------------------------------------
+ */
+@mixin button() {
+    transition-duration: .2s;
+    transition-property: background-color, color, border, opacity;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    padding: 10px 25px;
+    border-radius: 0;
+    min-width: 120px;
+    // min-height: 50px;
+    cursor: pointer;
+    position: relative;
+
+    @include font-size(14);
+    @include letter-spacing(20);
+    text-transform: uppercase;
+    //@include roboto;
+    font-weight: $semi;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    outline: none;
+    color: $white;
+    background-color: $red;
+    box-shadow: 8px 5px 20px 0px rgba($black, .15);
+
+    &:hover {
+        background-color: darken($red, 10%);
+    }
+}
+
+@mixin button-style($style: 'default') {
+    @if $style == 'default' {
+        background-color: $white;
+        color: $red;
+        &:hover {
+            background-color: darken($red, 10%);
+            color: $white;
+        }
+    }
+    @if $style == 'red' {
+        &:hover {
+            background-color: darken($red, 10%);
+        }
+    }
+}

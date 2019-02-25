@@ -1,0 +1,44 @@
+/*
+ |----------------------------------------------------------------
+ |  Html / Body
+ |----------------------------------------------------------------
+ */
+html {
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+body {
+    //@include main-font;
+	color: $maintext;
+	// background-color: #f6f6f6;
+	max-width: 1800px;
+	display: block;
+	margin: 0 auto;
+}
+
+::selection {
+	background: $highlight;
+	color: white;
+}
+
+::-moz-selection {
+	background: $highlight;
+	color: white;
+}
+
+// set the viewport for IE10
+@at-root {
+    @-ms-viewport {
+        width: device-width;
+    }
+}

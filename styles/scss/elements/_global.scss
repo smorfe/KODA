@@ -1,0 +1,251 @@
+/*
+ |----------------------------------------------------------------
+ | Global
+ |----------------------------------------------------------------
+ */
+.use-bg {
+    background-size: cover;
+    background-position: top center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.script-text {
+    //@include main-font;
+    @include font-size(16);
+}
+
+.red-text {
+    color: $red;
+    //@include bebas;
+}
+
+.remove-padding-bottom {
+    padding-bottom: 0px;
+}
+
+/*
+ |----------------------------------------------------------------
+ |  Link
+ |----------------------------------------------------------------
+ */
+a {
+    transition-duration: 250ms;
+    transition-property: background-color, color, border, opacity, text-indent;
+    text-decoration: none;
+    color: $highlight;
+
+    &:hover, &:focus, &:active {
+        text-decoration: none;
+    }
+
+    p &,
+    ul:not([class]) &,
+    ol:not([class]) & {
+        // border-bottom: 2px solid $light-grey;
+        opacity: 1;
+
+        &:hover {
+            opacity: .7;
+        }
+    }
+}
+
+/*
+ |----------------------------------------------------------------
+ | Images
+ |----------------------------------------------------------------
+ */
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+/*
+ |----------------------------------------------------------------
+ |  Lists
+ |----------------------------------------------------------------
+ */
+ul:not([class]),
+ol:not([class]) {
+    margin: 0 0 25px 10px;
+    list-style: none;
+    padding-left: 20px;
+
+    li {
+        @include font-size(17, 16);
+        line-height: 1.8;
+        position: relative;
+        margin-bottom: 5px;
+
+        &:before {
+            color: $highlight;
+            position: absolute;
+            left: -15px;
+        }
+    }
+
+    ul:not([class]),
+    ol:not([class]) {
+        margin: 0 0 25px 10px;
+        list-style: none;
+        padding-left: 25px;
+    }
+}
+
+ul:not([class]) {
+
+    li:before {
+        content: "\f111";
+        @include font-awesome;
+        @include font-size(6);
+        @include fluid-prop('top', 10, 0);
+        color: $highlight;
+    }
+}
+
+ol:not([class]) {
+    counter-reset: my-counter;
+
+    li:before {
+        content: counter(my-counter) '.';
+        counter-increment: my-counter;
+        top: 1px;
+        color: $grey;
+        @include font-size(16);
+        font-weight: bold;
+    }
+}
+
+/*
+ |----------------------------------------------------------------
+ |  Buttons
+ |----------------------------------------------------------------
+ */
+.button {
+    @include button();
+
+    &.default {
+        @include button-style('default');
+    }
+
+    &.red {
+        @include button-style('red');
+    }
+}
+
+
+/*
+ |----------------------------------------------------------------
+ | Images
+ |----------------------------------------------------------------
+ */
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+/*
+ |----------------------------------------------------------------
+ | Footer
+ |----------------------------------------------------------------
+ */
+.site-footer {
+    text-align: center;
+    @include padding-bottom(50);
+    @include padding-top(50);
+    border-top: 1px solid $border;
+
+    .social-lists {
+        margin-bottom: 10px;
+    }
+}
+
+.site-copyright {
+    padding-bottom: 0px;
+}
+
+/*
+ |----------------------------------------------------------------
+ | Animate
+ |----------------------------------------------------------------
+ */
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceInDown {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+@keyframes fadeInUpBig {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 500px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0;
+  }
+
+  to {
+    transform-origin: center;
+    transform: none;
+    opacity: 1;
+  }
+}

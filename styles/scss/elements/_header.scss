@@ -1,0 +1,79 @@
+/*
+ |----------------------------------------------------------------
+ | Header
+ |----------------------------------------------------------------
+ */
+
+
+/*
+ |----------------------------------------------------------------
+ | Navigation
+ |----------------------------------------------------------------
+ */
+.menu-trigger {
+	display: none;
+}
+
+.burger-menu {
+	width: 30px;
+	height: 20px;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: $red;
+
+    &:before, &:after {
+        content: "";
+        height: 4px;
+        background: currentColor;
+        opacity: 1;
+        transform: translate(0, 0);
+        transition-duration: 250ms;
+        transition-delay: 250ms;
+        transition-property: transform opacity;
+    }
+
+    .menu-opened & {
+    	&:before {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition-delay: 0s;
+        }
+
+        &:after {
+            opacity: 0;
+            transform: translateX(10px);
+            transition-delay: 0s;
+        }
+    }
+}
+
+.burger-line {
+	position: relative;
+	background: transparent;
+    height: 4px;
+
+    &:before, &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background: currentColor;
+        transform-origin: center;
+        transition-duration: 500ms;
+        transition-delay: 0s;
+        transition-property: transform;
+    }
+
+	.menu-opened & {
+        &:before {
+            transform: rotate(45deg);
+            transition-delay: 250ms;
+        }
+
+        &:after {
+            transform: rotate(-45deg);
+            transition-delay: 250ms;
+        }
+    }
+}

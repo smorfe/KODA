@@ -1,0 +1,45 @@
+@for $i from 1 through $block-grids {
+    .block-grid-#{$i} {
+        @include block-grid-class($i);
+    }
+}
+
+[class*='block-grid-'] {
+    @include block-grid;
+
+    > * {
+        @include block-grid-item;
+    }
+}
+
+.block-grid-center {
+    @include block-grid-center;
+}
+
+.block-grid-right {
+    @include block-grid-right;
+}
+
+.block-grid-spread {
+    @include block-grid-spread;
+}
+
+.block-grid-equal {
+    @include block-grid-equal;
+}
+
+.block-grid-middle {
+    @include block-grid-middle;
+}
+
+.block-grid-bottom {
+    @include block-grid-bottom;
+}
+
+.block-grid-stretch {
+    @include block-grid-stretch;
+}
+
+.block-grid-flatten {
+    @include block-grid-flatten;
+}

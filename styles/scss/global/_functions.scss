@@ -1,0 +1,8 @@
+/*
+ |----------------------------------------------------------------
+ |  Fluid Calculation
+ |----------------------------------------------------------------
+ */
+@function fluid($max, $min, $max-width: 1200, $min-width: 320, $unit: 'px') {
+    @return calc(#{$min}#{$unit} + (#{$max} - #{$min}) * (100vw - #{$min-width}#{$unit}) / (#{$max-width} - #{$min-width}));
+}

@@ -1,0 +1,22 @@
+@import
+    "global/_variables",
+    "global/_functions",
+    "global/_mixins",
+    "global/_theme_mixins",
+    "global/_normalize",
+
+    "elements/_body",
+    "elements/_typographic",
+    "elements/_global"
+;
+
+/** Something only in wysiwyg */
+html {
+
+}
+
+body {
+	background: none;
+	max-width: 980px;
+	margin: 40px 30px;
+}

@@ -1,0 +1,36 @@
+/*
+ |----------------------------------------------------------------
+ | Main Menu
+ |----------------------------------------------------------------
+ */
+.main-menu {
+	@include list-reset;
+	display: none;
+	justify-content: flex-end;
+	
+	li {
+		display: inline-block;
+		+ li {
+			margin-left: 25px;
+		}
+	}
+
+	a {
+		font-weight: $medium;
+		color: $black;
+		@include font-size(17, 16);
+		@include letter-spacing(20);
+    	position: relative;
+    	display: inline-block;
+
+		&:hover {
+			color: darken($red, 10%);
+		}
+	}
+}
+
+@media #{$above-tablet} {
+    .main-menu {
+        display: flex !important;
+    }
+}

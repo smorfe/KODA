@@ -1,0 +1,50 @@
+/**
+ *  Colors
+================================================= */
+$black      : #262626;
+$white      : #ffffff;
+$grey       : #555;
+$light-grey : rgba($grey, .2);
+
+$red        : #e55a5a;
+$blue       : #2f9ba8;
+
+/**
+ *  Text COlor
+================================================= */
+$maintext  : $black;
+$highlight : $red;
+$border    : $light-grey;
+
+/**
+ *  Text Sylte
+================================================= */
+$normal : 400;
+$medium : 500;
+$semi   : 600;
+$bold   : 700;
+
+/**
+ *  Grid Settings
+================================================= */
+$max-screen  : 1400px;
+$max-width   : 1200px;
+$columns     : 12;
+$block-grids : 4;
+$gutter      : 10px;
+
+/**
+ *  Media Query
+================================================= */
+$below-max-screen : unquote("screen and (max-width:1799px)");
+$below-max-width  : unquote("screen and (max-width:1199px)");
+$below-desktop    : unquote("screen and (max-width:979px)");
+$below-tablet     : unquote("screen and (max-width:767px)");
+$below-mini       : unquote("screen and (max-width:639px)");
+$below-mobile     : unquote("screen and (max-width:480px)");  // including 480 for perfect content
+
+$above-max-width  : unquote("screen and (min-width:1200px)");
+$above-desktop    : unquote("screen and (min-width:980px)");
+$above-tablet     : unquote("screen and (min-width:768px)");
+$above-mini       : unquote("screen and (min-width:640px)");
+$above-mobile     : unquote("screen and (min-width:480px)");

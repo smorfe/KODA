@@ -1,0 +1,196 @@
+/*
+ |----------------------------------------------------------------
+ |  Font Faces
+ |----------------------------------------------------------------
+ */
+@mixin font-awesome() {
+    font-family: FontAwesome;
+    text-rendering: auto;
+    font-smoothing:antialiased;
+}
+
+/*
+ |----------------------------------------------------------------
+ |  Letter spacing
+ |----------------------------------------------------------------
+ */
+@mixin letter-spacing($value) {
+    letter-spacing: #{$value/1000}em;
+}
+
+/*
+ |----------------------------------------------------------------
+ |  Fluid Property
+ |----------------------------------------------------------------
+ */
+@mixin fluid-prop($property, $max, $min: null, $maxScreen: 1200, $minScreen: 320, $unit: 'px') {
+    @if ($min == null) {
+        $min: $max;
+    }
+
+    #{$property}: fluid($max, $min, $maxScreen, $minScreen, $unit);
+
+    @media screen and (min-width: #{$maxScreen}#{$unit}) {
+        #{$property}: #{$max}#{$unit};
+    }
+}
+
+/*
+ |----------------------------------------------------------------
+ |  Fluid Property Alias
+ |----------------------------------------------------------------
+ */
+@mixin font-size($max, $min: null, $maxScreen: 1200, $minScreen: 320, $unit: 'px') {
+    @include fluid-prop('font-size', $max, $min, $maxScreen, $minScreen, $unit);
+}
+
+@mixin padding-top($max, $min: null, $maxScreen: 1200, $minScreen: 320, $unit: 'px') {
+    @include fluid-prop('padding-top', $max, $min, $maxScreen, $minScreen, $unit);
+}
+
+@mixin padding-bottom($max, $min: null, $maxScreen: 1200, $minScreen: 320, $unit: 'px') {
+    @include fluid-prop('padding-bottom', $max, $min, $maxScreen, $minScreen, $unit);
+}
+
+@mixin padding-left($max, $min: null, $maxScreen: 1200, $minScreen: 320, $unit: 'px') {
+    @include fluid-prop('padding-left', $max, $min, $maxScreen, $minScreen, $unit);
+}
+
+@mixin padding-right($max, $min: null, $maxScreen: 1200, $minScreen: 320, $unit: 'px') {
+    @include fluid-prop('padding-right', $max, $min, $maxScreen, $minScreen, $unit);
+}
+
+@mixin margin-top($max, $min: null, $maxScreen: 1200, $minScreen: 320, $unit: 'px') {
+    @include fluid-prop('margin-top', $max, $min, $maxScreen, $minScreen, $unit);
+}
+
+@mixin margin-bottom($max, $min: null, $maxScreen: 1200, $minScreen: 320, $unit: 'px') {
+    @include fluid-prop('margin-bottom', $max, $min, $maxScreen, $minScreen, $unit);
+}
+
+@mixin margin-left($max, $min: null, $maxScreen: 1200, $minScreen: 320, $unit: 'px') {
+    @include fluid-prop('margin-left', $max, $min, $maxScreen, $minScreen, $unit);
+}
+
+@mixin margin-right($max, $min: null, $maxScreen: 1200, $minScreen: 320, $unit: 'px') {
+    @include fluid-prop('margin-right', $max, $min, $maxScreen, $minScreen, $unit);
+}
+
+/*
+ |----------------------------------------------------------------
+ |  Lists
+ |----------------------------------------------------------------
+ */
+@mixin list-reset() {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/*
+ |----------------------------------------------------------------
+ |  Fluid Height Calculation
+ |----------------------------------------------------------------
+ */
+@mixin ratio-height($ratio-height, $ratio-width, $max-width-base: $max-screen, $offset: '0px') {
+    height: calc(100vw * #{$ratio-height} / #{$ratio-width} + #{$offset});
+    max-height: calc(#{$max-width-base} * #{$ratio-height} / #{$ratio-width} + #{$offset});
+}
+
+/*
+ |----------------------------------------------------------------
+ |  Overlay Pseudo
+ |----------------------------------------------------------------
+ */
+@mixin overlay($pseudo: 'after') {
+    position: relative;
+
+    &:#{$pseudo} {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @content;
+    }
+}
+
+@mixin overlay-color($overlayColor, $hoverColor: false, $pseudo: 'after') {
+    @include overlay($pseudo: $pseudo) {
+        background-color: $overlayColor;
+        transition-duration: 250ms;
+        transition-property: background, transform, opacity;
+    }
+
+    @if $hoverColor != false {
+        &:hover:#{$pseudo} {
+            background-color: $hoverColor;
+        }
+    }
+}
+
+/*
+ |----------------------------------------------------------------
+ |  Gravityform
+ |----------------------------------------------------------------
+ */
+@mixin gform-gutter($gap: $gutter) {
+    .gform_fields {
+        margin-left: -$gap;
+        margin-right: -$gap;
+    }
+
+    .gfield {
+        padding-left: $gap;
+        padding-right: $gap;
+    }
+}
+
+@mixin inline-gform($body: null, $footer: null, $gap: $gutter) {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-left: -$gap;
+    margin-right: -$gap;
+
+    .gform_heading {
+        flex-basis: 100%;
+        min-width: 100%;
+        padding-left: $gap;
+        padding-right: $gap;
+    }
+
+    .gform_body {
+        @if ($body != null) {
+            flex-basis: $body;
+            min-width: $body;
+        } @else {
+            flex: 1;
+        }
+        padding-left: $gap;
+        padding-right: $gap;
+    }
+
+    .gform_footer {
+        @if ($footer != null) {
+            flex-basis: $footer;
+            min-width: $footer;
+        }
+        padding-left: $gap;
+        padding-right: $gap;
+    }
+
+    .gform_fields {
+        margin-left: -$gap;
+        margin-right: -$gap;
+        align-items: flex-end;
+    }
+
+    .gfield {
+        margin-bottom: 0;
+        padding-left: $gap;
+        padding-right: $gap;
+    }
+}
