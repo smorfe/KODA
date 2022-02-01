@@ -1,0 +1,199 @@
+.banner-section {
+    background-image: url('https://boostmywireless.ca/wp-content/uploads/2021/09/banner-image.jpg');
+    @include padding-top(125, 50);
+    @include padding-bottom(125, 50);
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: $purple;
+        opacity: .75;
+    }
+
+   
+    > .row {
+        @include fluid-prop('min-height', 400);
+    }
+
+    .banner-column {
+        position: relative;
+        z-index: 2;
+        color: $white;
+    }
+
+    .banner-button {
+        margin-top: 20px;
+    }
+}
+
+.cta-section, .carriers-section, .benefits-section, .talk-section, .form-section {
+    @include padding-top(80, 50);
+    padding-bottom: 50px;
+}
+
+.survey-section {
+    @include padding-top(80, 50);
+    @include padding-bottom(80, 50);
+}
+
+.cta-gallery-wrapper {
+
+    .slick-dots {
+        @include list-reset;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+
+        li {
+            display: inline-block;
+            margin: 0px 5px;
+        }
+    }
+
+    .slider-dot {
+        width: 15px;
+        height: 15px;
+        display: block;
+        background-color: transparent;
+        border-radius: 50%;
+        border: 2px solid $purple;
+        transition: all 250ms ease-in-out;
+    }
+
+    .slick-active .slider-dot {
+        background-color: $purple;
+    }
+}
+
+.survey-section {
+    color: $white;
+    background-color: $purple;
+
+    .button {
+        margin-top: 20px;
+    }
+}
+
+.carriers-grid {
+    @include margin-top(50, 10);
+    @include margin-bottom(50, 10);
+
+    .list-item {
+        text-align: center;
+    }
+}
+
+.benefits-section {
+    background-color: $grey;
+    color: $white;
+}
+
+.benefits-grid {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    .benefit-wrapper {
+        background-color: $white;
+        text-align: center;
+        color: $black;
+        padding: 30px 30px 10px;
+        box-shadow: 8px 5px 20px 0px rgba($purple, .15);
+    
+        > img {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.talk-section {
+    color: $white;
+    background-color: $purple;
+}
+
+.talk-steps-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+    align-items: center;
+    padding: 25px 0px;
+
+    .step-count {
+        @include font-size(100, 30);
+        font-weight: $semi;
+        width: 120px;
+        height: 120px;
+        border-radius: 5px;
+        border: 2px solid $orange;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $orange;
+    }
+
+    .step-content {
+        flex: 1;
+        padding: 0px 30px;
+
+        > h4 {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.form-section {
+    .wpforms-submit {
+        @extend .button;
+        @include button-style('outlined-button');
+        box-shadow: none;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        background-color: transparent !important;
+        color: $orange !important;
+        border-color: $orange !important;
+
+        &:hover {
+            background-color: $orange !important;
+            color: $white !important;
+            border-color: $orange !important;
+        }
+    }
+
+    label {
+        margin-bottom: 10px;
+        display: inline-block;
+        font-weight: $semi;
+    }
+
+    span, input[type=text], input[type=email], textarea {
+        display: block;
+        width: 100%;
+    }
+
+    input[type=text], input[type=email], textarea {
+        padding: 10px;
+        border: 1px solid $black;
+        border-radius: 2px;
+
+        &:focus, &:focus-visible {
+            outline-color: $orange;
+        }
+    }
+
+}
+
+.wpforms-required-label {
+    display: inline-block !important;
+}
+
+.wpforms-submit-container {
+    text-align: center !important;
+    margin-top: 30px !important;
+}

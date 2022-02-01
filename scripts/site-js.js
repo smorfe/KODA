@@ -1,4 +1,17 @@
 jQuery(function($) {
+    var stickyOffset = $('.site-header').offset().top + 20;
+    $(window).scroll(function () {
+        var sticky = $('.site-header'),
+            width = $(document).width(),
+            scroll = $(window).scrollTop();
+
+        if (scroll >= stickyOffset) {
+            sticky.addClass('is-sticky');
+        } else {
+            sticky.removeClass('is-sticky');
+        }
+    });
+
     /*
      |----------------------------------------------------------------
      |  Smooth Scrolling
@@ -27,5 +40,15 @@ jQuery(function($) {
         $('.site-header').toggleClass('menu-opened');
 
         $('.main-menu').slideToggle();
+    });
+
+    $('.cta-gallery-wrapper').slick({
+        arrows: false,
+        autoplay: true,
+        rows: 0,
+        dots: true,
+        customPaging : function(slider, i) {
+            return '<span class="slider-dot"></span>';
+        },
     });
 })

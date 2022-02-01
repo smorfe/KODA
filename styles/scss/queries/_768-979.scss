@@ -1,3 +1,17 @@
 @media #{$below-desktop} {
+    .benefits-grid {
+        @include block-grid-class(2);
 
+        .list-item {
+            margin-bottom: 20px;
+        }
+    }
+
+    .carriers-grid {
+        @include block-grid-class(3);
+
+        .list-item {
+            margin: 30px 0px;
+        }
+    }
 }

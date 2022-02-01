@@ -10,6 +10,9 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
     <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri().'/images/favicon.ico'; ?>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <?php wp_head();?>
 </head>
 

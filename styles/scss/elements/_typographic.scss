@@ -4,7 +4,7 @@
  |----------------------------------------------------------------
  */
 h1, h2, h3, h4, h5, h6 {
-    line-height: 1.2;
+    line-height: 1.4;
     margin: 0;
     padding-bottom: 20px;
     font-weight: $normal;
@@ -24,11 +24,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    @include font-size(50, 32);
+    @include font-size(50, 28);
+    font-weight: $x-bold;
 }
 
 h2 {
     @include font-size(32, 24);
+    font-weight: $bold;
 }
 
 h3 {

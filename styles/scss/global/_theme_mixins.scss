@@ -11,13 +11,13 @@
 //    font-family: 'Roboto Condensed', sans-serif;
 //}
 //
-//@mixin bebas() {
-//    font-family: "bebas-neue",sans-serif;
-//}
-//
-//@mixin main-font() {
-//    @include source;
-//}
+@mixin montserrat() {
+    font-family: 'Montserrat', sans-serif;
+}
+
+@mixin main-font() {
+   @include montserrat;
+}
 
 /*
  |----------------------------------------------------------------
@@ -34,7 +34,7 @@
     padding: 10px 25px;
     border-radius: 0;
     min-width: 120px;
-    // min-height: 50px;
+    min-height: 50px;
     cursor: pointer;
     position: relative;
 
@@ -42,32 +42,53 @@
     @include letter-spacing(20);
     text-transform: uppercase;
     //@include roboto;
-    font-weight: $semi;
+    font-weight: $medium;
     text-align: center;
     text-decoration: none;
     text-shadow: none;
     outline: none;
     color: $white;
-    background-color: $red;
+    background-color: $orange;
     box-shadow: 8px 5px 20px 0px rgba($black, .15);
 
     &:hover {
-        background-color: darken($red, 10%);
+        background-color: $white;
+        border-color: $white;
+        color: $orange;
     }
 }
 
 @mixin button-style($style: 'default') {
     @if $style == 'default' {
         background-color: $white;
-        color: $red;
+        color: $orange;
         &:hover {
-            background-color: darken($red, 10%);
+            background-color: darken($orange, 10%);
             color: $white;
         }
     }
-    @if $style == 'red' {
+
+    @if $style == 'orange' {
         &:hover {
-            background-color: darken($red, 10%);
+            background-color: darken($orange, 10%);
         }
+    }
+
+    @if $style == 'outlined-button' {
+        background-color: transparent;
+        color: $orange;
+        border-color: $orange;
+
+        &:hover {
+            background-color:$white;
+            color: $orange;
+        }
+    }
+}
+
+
+.button {
+    &.outlined-button {
+        @include button-style('outlined-button');
     }
 }

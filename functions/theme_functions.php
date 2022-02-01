@@ -6,7 +6,7 @@
  */
 function koda_site_logo($logo = '', $class = 'site-logo') {
     printf(
-        '<a href="%1$s" title="%2$s" rel="home"><img src="%3$s" alt="%2$s" class="%4$s" /></a>',
+        '<a href="%1$s" title="%2$s" rel="home"><img src="%3$s" alt="%2$s" class="%4$s" width="200" height="51" /></a>',
         home_url(),
         esc_attr(get_bloginfo('name')),
         trailingslashit(get_stylesheet_directory_uri()). KodaTheme::load_instance()->config($logo),

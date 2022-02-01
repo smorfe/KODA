@@ -12,6 +12,10 @@
     text-align: center;
 }
 
+.text-right {
+    text-align: right;
+}
+
 .script-text {
     //@include main-font;
     @include font-size(16);
@@ -147,26 +151,6 @@ img {
     max-width: 100%;
     height: auto;
     vertical-align: bottom;
-}
-
-/*
- |----------------------------------------------------------------
- | Footer
- |----------------------------------------------------------------
- */
-.site-footer {
-    text-align: center;
-    @include padding-bottom(50);
-    @include padding-top(50);
-    border-top: 1px solid $border;
-
-    .social-lists {
-        margin-bottom: 10px;
-    }
-}
-
-.site-copyright {
-    padding-bottom: 0px;
 }
 
 /*

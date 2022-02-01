@@ -3,7 +3,34 @@
  | Header
  |----------------------------------------------------------------
  */
+.site-header {
+    padding: 20px 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
 
+    // &.is-sticky {
+    //     background-color: $purple;
+    // }
+}
+
+.talk-menu-btn {
+    > a {
+        border: 1px solid $white;
+        padding: 10px 20px;
+        display: inline-block;
+        text-transform: uppercase;
+        color: $white;
+
+        &:hover {
+            color: $white;
+            background-color: $orange;
+            border-color: $orange;
+        }
+    }
+}
 
 /*
  |----------------------------------------------------------------

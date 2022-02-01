@@ -18,12 +18,12 @@ html {
 
 
 body {
-    //@include main-font;
+    @include main-font;
 	color: $maintext;
 	// background-color: #f6f6f6;
-	max-width: 1800px;
-	display: block;
-	margin: 0 auto;
+	// max-width: 1800px;
+	// display: block;
+	// margin: 0 auto;
 }
 
 ::selection {

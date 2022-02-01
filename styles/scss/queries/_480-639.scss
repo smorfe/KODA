@@ -1,3 +1,51 @@
 @media #{$below-mini} {
+    .banner-section {
+        .banner-column {
+            @include columns-class(12);
+        }
+    }
 
+    .benefits-grid {
+        @include block-grid-class(1);
+    }
+
+    .carriers-grid {
+        @include block-grid-class(2);
+
+        .list-item {
+            > img {
+                max-width: 150px;
+            }
+        }
+    }
+
+    .cta-gallery-wrapper {
+        .slick-dots {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            transform: none;
+            text-align: center;
+            margin: 20px 0px 30px;
+        }
+    }
+
+    .form-section {
+        .columns-8, .columns-4 {
+            @include columns-class(12);
+        }
+    }
+
+    .talk-steps-item {
+        display: block;
+
+        .step-count {
+            width: 50px;
+            height: 50px;
+        }
+
+        .step-content {
+            padding: 15px 0px 0px;
+        }
+    }
 }

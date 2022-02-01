@@ -1,10 +1,12 @@
 /**
  *  Colors
 ================================================= */
-$black      : #262626;
+$black      : #000000;
 $white      : #ffffff;
-$grey       : #555;
+$grey       : #a6a5b5;
 $light-grey : rgba($grey, .2);
+$purple     : #1d1a58;
+$orange     : #f37022;
 
 $red        : #e55a5a;
 $blue       : #2f9ba8;
@@ -13,16 +15,18 @@ $blue       : #2f9ba8;
  *  Text COlor
 ================================================= */
 $maintext  : $black;
-$highlight : $red;
+$highlight : $orange;
 $border    : $light-grey;
 
 /**
  *  Text Sylte
 ================================================= */
+$light : 300;
 $normal : 400;
 $medium : 500;
 $semi   : 600;
 $bold   : 700;
+$x-bold : 800;
 
 /**
  *  Grid Settings
@@ -30,7 +34,7 @@ $bold   : 700;
 $max-screen  : 1400px;
 $max-width   : 1200px;
 $columns     : 12;
-$block-grids : 4;
+$block-grids : 6;
 $gutter      : 10px;
 
 /**

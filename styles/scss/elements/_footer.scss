@@ -1,0 +1,23 @@
+/*
+ |----------------------------------------------------------------
+ | Footer
+ |----------------------------------------------------------------
+ */
+.site-footer {
+    background-color: $purple;
+    color: $white;
+}
+
+ .site-footer {
+    @include padding-bottom(50);
+    @include padding-top(50);
+
+    a {
+        color: $white;
+    }
+}
+
+.site-copyright {
+    padding-bottom: 0px;
+    text-transform: uppercase;
+}

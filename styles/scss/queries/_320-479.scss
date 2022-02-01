@@ -1,3 +1,9 @@
 @media #{$below-mobile} {
-
+    .carriers-grid {
+        .list-item {
+            > img {
+                max-width: 100px;
+            }
+        }
+    }
 }
